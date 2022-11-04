@@ -12,7 +12,7 @@ export interface IItemProps {
   size: "l" | "m" | "s";
 }
 
-const Item = (props: IProps) => {
+const Item = (props: IItemProps) => {
   const { id, title, description, date, tag, size } = props;
   return (
     <li className="py-4">

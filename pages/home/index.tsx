@@ -9,7 +9,7 @@ export async function getStaticProps() {
   return Promise.resolve({
     props: {
       list: all,
-      // res,
+      // res,IProps
     },
   });
 }

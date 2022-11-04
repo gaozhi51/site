@@ -22,10 +22,8 @@ const ImageSwiper = () => {
         <img
           alt={"1"}
           src="https://19277176.s61i.faiusr.com/2/AD0I_MqYCRACGAAglcj65QUoifKVlgcwgA842AQ.jpg"
-        ></img>
+        />
       </SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
     </Swiper>
   );
 };
