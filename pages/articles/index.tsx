@@ -1,6 +1,6 @@
-import fse from "fs-extra";
 import Link from "next/link";
-import path from "path";
+import Card from "../../components/Card";
+import List from "../../components/List";
 import all from "../../content/all.json";
 
 export async function getStaticProps() {
@@ -15,16 +15,9 @@ export async function getStaticProps() {
 
 const Articles = (props: any) => {
   return (
-    <ul className="content-width mx-auto">
-      {props.list.map((i: any) => {
-        const { title } = i;
-        return (
-          <li key={title}>
-            <Link href={`/articles/${title}`}>{title}</Link>
-          </li>
-        );
-      })}
-    </ul>
+    <Card className="content-width mx-auto" title="文章列表">
+      <List list={props.list} />
+    </Card>
   );
 };
 
