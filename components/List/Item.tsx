@@ -9,11 +9,11 @@ export interface IItemProps {
   tag: string[];
   description?: string;
   date: string;
-  size: "l" | "m" | "s";
+  size?: "l" | "m" | "s";
 }
 
 const Item = (props: IItemProps) => {
-  const { id, title, description, date, tag, size } = props;
+  const { id, title, description, date, tag, size = "m" } = props;
   return (
     <li className="py-4">
       <div className="flex justify-between mb-1 break-all">

@@ -14,7 +14,7 @@ export async function getStaticProps() {
   });
 }
 
-const parse = (tag) => {
+const parse = (tag: string[]) => {
   return all.filter((i) => i.tag.includes("热门"));
 };
 
@@ -26,37 +26,37 @@ const Home = () => {
         <div className="w-full grid grid-cols-6 gap-4">
           <div className="col-span-4">
             <Card title="热门课程" moreLink="/articles">
-              <List list={parse("热门")} />
+              <List list={parse(["热门"])} />
             </Card>
           </div>
           <div className="col-span-2">
             <Card title="职业教育" moreLink="/articles">
-              <List list={parse("热门")} size="s" />
+              <List list={parse(["热门"])} size="s" />
             </Card>
           </div>
           <div className="col-span-3">
             <Card title="技能培训" moreLink="/articles">
-              <List list={parse("热门")} />
+              <List list={parse(["热门"])} />
             </Card>
           </div>
           <div className="col-span-3">
             <Card title="专家访谈" moreLink="/articles">
-              <List list={parse("热门")} />
+              <List list={parse(["热门"])} />
             </Card>
           </div>
           <div className="col-span-2">
             <Card title="技能培训" moreLink="/articles">
-              <List list={parse("热门")} />
+              <List list={parse(["热门"])} />
             </Card>
           </div>
           <div className="col-span-2">
             <Card title="专家访谈" moreLink="/articles">
-              <List list={parse("热门")} />
+              <List list={parse(["热门"])} />
             </Card>
           </div>
           <div className="col-span-2">
             <Card title="专家访谈" moreLink="/articles">
-              <List list={parse("热门")} />
+              <List list={parse(["热门"])} />
             </Card>
           </div>
         </div>

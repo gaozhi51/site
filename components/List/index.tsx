@@ -23,7 +23,7 @@ const List = (props: IProps) => {
       })}
     >
       {list.map((item) => (
-        <Item key={item.id} size={size} {...item} />
+        <Item key={item.id} {...item} />
       ))}
     </ul>
   );
