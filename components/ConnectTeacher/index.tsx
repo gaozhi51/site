@@ -21,7 +21,7 @@ const ConnectTeacher = (props: any) => {
     >
       <img
         className="w-60 mt-24 mx-auto"
-        src="../img/teacher_bian.jpg"
+        src="./img/teacher_bian.jpg"
         alt="边老师"
         onClick={(e) => {
           e.preventDefault();

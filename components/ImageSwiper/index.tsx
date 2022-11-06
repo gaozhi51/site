@@ -34,7 +34,7 @@ const ImageSwiper = () => {
             onClick={() => {
               setVisible(true);
             }}
-            className="cursor-pointer"
+            className="cursor-pointer w-full"
           />
         </SwiperSlide>
       </Swiper>
