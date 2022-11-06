@@ -24,8 +24,8 @@ const Articles = (props: any) => {
   } = router;
 
   if (tag) {
-    list = list.filter((i) => i.tag.includes(tag));
-    title = tag;
+    list = list.filter((i: any) => i.tag.includes(tag));
+    title = tag as string;
   }
 
   return (

@@ -5,7 +5,7 @@ import cx from "classnames";
 interface IProps {
   children: string | ReactNode;
   title: string | ReactNode;
-  extra: string | ReactNode;
+  extra?: string | ReactNode;
   moreLink?: string;
   className?: string;
 }
