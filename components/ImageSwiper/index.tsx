@@ -30,7 +30,7 @@ const ImageSwiper = () => {
         <SwiperSlide>
           <img
             alt={"高职升学路线图"}
-            src="../img/slide1.jpg"
+            src="./img/slide1.jpg"
             onClick={() => {
               setVisible(true);
             }}
