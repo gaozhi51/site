@@ -5,12 +5,13 @@ import cx from "classnames";
 interface IProps {
   children: string | ReactNode;
   title: string | ReactNode;
+  extra: string | ReactNode;
   moreLink?: string;
   className?: string;
 }
 
 const Card = (props: IProps) => {
-  const { title, moreLink, children, className } = props;
+  const { title, moreLink, children, className, extra } = props;
   return (
     <div className={cx("border rounded-xl shadow-md border-gray-200 p-4 bg-white", className)}>
       <div className="flex justify-between h-10 text-base pb-3 border-b border-gray-300">
@@ -18,6 +19,7 @@ const Card = (props: IProps) => {
           <div className="base-background-color w-2 h-full absolute"></div>
           <div className="ml-3 base-text-color">{title}</div>
         </div>
+        {extra && extra}
         {moreLink && (
           <div className="text-slate-500">
             <Link href={moreLink}>更多</Link>

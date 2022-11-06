@@ -6,25 +6,39 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import Image from "next/image";
+import ConnectTeacher from "../ConnectTeacher";
+import { useState } from "react";
 
 const ImageSwiper = () => {
+  const [visible, setVisible] = useState<boolean>(false);
+
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      loop
-      autoplay
-      navigation
-      pagination={{ clickable: true }}
-      className="h-96"
-    >
-      <SwiperSlide>
-        <img
-          alt={"1"}
-          src="https://19277176.s61i.faiusr.com/2/AD0I_MqYCRACGAAglcj65QUoifKVlgcwgA842AQ.jpg"
-        />
-      </SwiperSlide>
-    </Swiper>
+    <div>
+      <ConnectTeacher
+        visible={visible}
+        close={() => {
+          setVisible(false);
+        }}
+      />
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        loop
+        autoplay
+        navigation
+        pagination={{ clickable: true }}
+      >
+        <SwiperSlide>
+          <img
+            alt={"高职升学路线图"}
+            src="../img/slide1.jpg"
+            onClick={() => {
+              setVisible(true);
+            }}
+            className="cursor-pointer"
+          />
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 };
 
