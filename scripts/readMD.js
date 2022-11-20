@@ -13,9 +13,9 @@ const readMD = async (list) => {
       .filter((item) => item.endsWith(".md"))
       .map(async (item) => {
         const res = await fse.readFile(item, "utf8");
-        console.log("res: ", res);
+        // console.log("res: ", res);
         const $1 = pattern.exec(res)?.at(1) || "";
-        console.log("$1: ", $1);
+        // console.log("$1: ", $1);
         const obj = $1
           .split("\n")
           .filter(Boolean)
@@ -27,12 +27,12 @@ const readMD = async (list) => {
             }
             return acc;
           }, {});
-        console.log(obj);
+        // console.log(obj);
         mds.push({
           ...obj,
           tag: obj.tag ? obj.tag.split(",") : [],
           _content: res.replace(pattern, "").replace(imgPattern, ($0, $1) => {
-            return `(../${obj.title}/${$1})`;
+            return `(../${obj.id}/${$1})`;
           }),
         });
       })

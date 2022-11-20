@@ -32,7 +32,7 @@ const Home = (props: any) => {
             return (
               <div key={name} className={`col-span-${span}`}>
                 <Card title={name} moreLink={href}>
-                  <List list={parse(list, name) as any} max={3} />
+                  <List list={parse(list, name) as any} max={3} showDate={span > 2} />
                 </Card>
               </div>
             );

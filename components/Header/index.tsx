@@ -26,8 +26,12 @@ const Header = () => {
     <>
       <Head>
         <title>高职教育</title>
-        <meta name="description" content="专业职业教育、技能培训、互联网教育及企业咨询等课程" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="robots" content="index" />
+        <meta
+          name="description"
+          content="高职教育-专业职业教育、技能培训、互联网教育及企业咨询等课程"
+        />
+        <link rel="icon" href="./favicon.ico" />
       </Head>
       <header className="bg-white">
         <div className="content-width mx-auto h-24 flex items-center justify-between shrink-0">

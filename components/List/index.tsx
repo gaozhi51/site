@@ -12,10 +12,11 @@ interface IProps {
    */
   size?: "l" | "m" | "s";
   max?: number;
+  showDate?: boolean;
 }
 
 const List = (props: IProps) => {
-  const { list, size = "m", max = list.length } = props;
+  const { list, size = "m", max = list.length, showDate = true } = props;
   return (
     <ul
       className={cx("list-none divide-y divide-dashed divide-slate-400", {
@@ -24,7 +25,7 @@ const List = (props: IProps) => {
       })}
     >
       {list.slice(0, max).map((item) => (
-        <Item key={item.id} {...item} />
+        <Item key={item.id} {...item} showDate={showDate} />
       ))}
     </ul>
   );

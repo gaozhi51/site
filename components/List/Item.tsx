@@ -9,20 +9,23 @@ export interface IItemProps {
   tag: string[];
   description?: string;
   date: string;
+  showDate?: boolean;
   size?: "l" | "m" | "s";
 }
 
 const Item = (props: IItemProps) => {
-  const { id, title, description, date, tag, size = "m" } = props;
+  const { id, title, description, date, tag, size = "m", showDate = true } = props;
   return (
     <li className="py-4">
       <div className="flex justify-between mb-1 break-all">
-        <Link href={`${ROUTES_PATH.articles}/${id}`} className="shrink-1 truncate">
+        <Link target="_blank" href={`${ROUTES_PATH.articles}/${id}`} className="shrink-1 truncate">
           {title}
         </Link>
-        <div className="shrink-0">
-          {dayjs(date).format(size === "s" ? DATE_FORMAT : DATE_TIME_FORMAT)}
-        </div>
+        {showDate && (
+          <div className="shrink-0">
+            {dayjs(date).format(size === "s" ? DATE_FORMAT : DATE_TIME_FORMAT)}
+          </div>
+        )}
       </div>
       {description && size === "l" && <div className="text-sm text-gray-500">{description}</div>}
     </li>
